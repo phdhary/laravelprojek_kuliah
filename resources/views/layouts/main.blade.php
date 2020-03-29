@@ -14,7 +14,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body>
+<body class="bg-dark">
 
     {{-- navbar --}}
     @include('includes\navbar')

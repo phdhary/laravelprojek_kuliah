@@ -8,17 +8,17 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item {{ Route::is('index') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('index') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/features') }}">Features</a>
+                <li class="nav-item {{ Route::is('features') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('features')}}">Features</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/pricing') }}">Pricing</a>
+                <li class="nav-item {{ Route::is('pricing') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/mahasiswa') }}">Mahasiswa</a>
+                <li class="nav-item {{ Route::is('mahasiswa.index') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('mahasiswa.index') }}">Mahasiswa</a>
                 </li>
             </ul>
         </div>

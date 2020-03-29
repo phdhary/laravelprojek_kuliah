@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Mahasiswa;
+use App\Models\Mahasiswa;
+use App\Http\Requests\MahasiswaRequest;
 
 class MahasiswaController extends Controller
 {
@@ -28,7 +29,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages\mahasiswa\create');
     }
 
     /**
@@ -37,9 +38,12 @@ class MahasiswaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MahasiswaRequest $request)
     {
-        //
+        $data = $request->all();
+
+        Mahasiswa::create($data);
+        return redirect()->route('mahasiswa.index');
     }
 
     /**

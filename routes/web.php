@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@index');
-Route::get('/features', 'PagesController@features');
-Route::get('/pricing', 'PagesController@pricing');
+Route::get('/', 'PagesController@index')->name('index');
+Route::get('/features', 'PagesController@features')->name('features');
+Route::get('/pricing', 'PagesController@pricing')->name('pricing');
 
 Route::resource('mahasiswa', 'MahasiswaController');
