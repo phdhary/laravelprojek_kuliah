@@ -7,9 +7,9 @@
     <div class="row">
         <div class="col-10">
             <div>
-                <h1 class="display-4 text-light">Laravel - Mahasiswa</h1>
+                <h1 class="display-4 text-light">Mahasiswa</h1>
             </div>
-            <a href="{{ route('mahasiswa.create') }}">Tambah Mahasiswa</a>
+            <a class="badge badge-primary" href="{{ route('mahasiswa.create') }}">Tambah Mahasiswa</a>
         </div>
 
 
