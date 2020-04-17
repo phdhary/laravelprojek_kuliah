@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/features', 'PagesController@features')->name('features');
 Route::get('/pricing', 'PagesController@pricing')->name('pricing');
+Route::get('/students', 'StudentsController@index')->name('students.index');
+Route::get('/students/{student}', 'StudentsController@show')->name('students.show');
 
 Route::resource('mahasiswa', 'MahasiswaController');

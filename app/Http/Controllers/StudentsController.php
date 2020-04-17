@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Mahasiswa;
-use App\Http\Requests\MahasiswaRequest;
+use App\Models\Student;
 
-class MahasiswaController extends Controller
+class StudentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswa = Mahasiswa::all();
-        return view('pages.mahasiswa.index',[
-            'mahasiswa'=> $mahasiswa
+        $students = Student::all();
+        return view('pages.students.index',[
+            'students' => $students
         ]);
     }
 
@@ -29,7 +28,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('pages\mahasiswa\create');
+        //
     }
 
     /**
@@ -38,12 +37,9 @@ class MahasiswaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MahasiswaRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->all();
-
-        Mahasiswa::create($data);
-        return redirect()->route('mahasiswa.index');
+        //
     }
 
     /**
@@ -52,9 +48,9 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Student $student)
     {
-        //
+        return view('pages.students.show', compact ('student'));
     }
 
     /**
@@ -65,11 +61,7 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        $mhs = Mahasiswa::findorfail($id);
-
-        return view('pages\mahasiswa\edit')->with([
-            'mhs' => $mhs
-        ]);
+        //
     }
 
     /**
@@ -79,14 +71,9 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MahasiswaRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $mhs = Mahasiswa::findorfail($id);
-        $mhs->update($data);
-
-        return redirect()->route('mahasiswa.index');
+        //
     }
 
     /**
@@ -97,10 +84,6 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        $mhs = Mahasiswa::findorfail($id);
-
-        $mhs->delete();
-
-        return redirect()->route('mahasiswa.index');
+        //
     }
 }
